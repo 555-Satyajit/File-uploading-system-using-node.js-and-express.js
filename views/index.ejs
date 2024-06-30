@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="input-wrapper">
+                <input type="file" id="up" name="fileUpload">
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+
+        
+        <% if (upload.length > 0) { %>
+            <div class="cards-container">
+                <% upload.forEach(function(file) { %>
+                    <div class="card">
+                        <div class="card-content">
+                            <h2 class="card-title"><%= file %></h2>
+                            <h3 class="card-text">Click on Readmore for details....</h3>
+                            <a class="card-button" href="/download/<%= file %>">DOWNLOAD</a> 
+                            <a class="card-button" href= "/edit/<%= file %>">RENAME</a>
+                            <a type="submit" class="card-button"href="/del/<%= file %>">DELETE</a>
+
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <h3>No tasks yet</h3>
+        <% } %>
+    </div>
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

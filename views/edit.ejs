@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="noteForm" method="post" action="/edit">
+                <div class="form-group">
+                    <label for="fileName">Old Name</label>
+                    <input type="text" id="fileName" name="Name" value=<%= file %>>
+                </div>
+               
+                <div class="form-group">
+                    <label for="notepad">NEW NAME</label>
+                    <input type="text" id="fileName" name="content1" ></textarea>
+                    <button type="submit" class="card-button">Update</button>
+                </div>
+               
+            </form>
+        </div>
+
+        
+
+    <script src="/javascripts/index.js"></script>
+</body>
+</html>
